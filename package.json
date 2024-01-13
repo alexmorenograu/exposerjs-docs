@@ -1,0 +1,17 @@
+{
+  "name": "exposerjs-doc",
+  "version": "1.0.0",
+  "author": "",
+  "main": "index.js",
+  "devDependencies": {
+    "vitepress": "^1.0.0-rc.36"
+  },
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  }
+}
