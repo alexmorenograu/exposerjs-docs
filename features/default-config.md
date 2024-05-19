@@ -48,6 +48,7 @@
     name: "name",
     allow: "allow",
   },
+  autoImport: false
 };
 ```
 
@@ -56,7 +57,7 @@
 ```js
 /* More code */
 const myConfig = { prefix: "/api" };
-exposer.run(PrismaClient, null, myConfig);
+exposer.run({PrismaClient, config: myConfig});
 ```
 
 # Properties explained
@@ -130,7 +131,8 @@ model userrestriction {
 You pass this in configuration:
 
 ```js
-exposer.run(PrismaClient, null, {
+exposer.run({
+  PrismaClient,
   aclModel: {
     tableName: "userrestriction",
     model: "section",
@@ -139,3 +141,54 @@ exposer.run(PrismaClient, null, {
   },
 });
 ```
+
+## AutoImport
+
+If you use a directory (or several) to store the methods you can activate auto import
+
+### Example
+```js
+exposer.run({
+  PrismaClient, 
+  config: {
+    autoImport: {
+      paths: './src/routes' // ← String or Array ['src/routes', 'src/otherRoutes', ...] *Required
+      getFile: (n) => n.includes('.js') // ← Default function
+    }
+  }
+});
+```
+
+### Example
+
+If you have, for example, the directory: 
+- /src
+  - /routes
+    - /myFirstModel
+      - myFistMethod.js
+      - mySecretFile.js
+
+You can add this in config:
+```js
+exposer.run({
+  PrismaClient, 
+  config: {
+    autoImport: {
+      paths: './src/routes/myFirstModel' // OR './src/routes' if you want
+    }
+  }
+});
+```
+You can use the "getFile" parameter to include or exclude specific files
+```js
+exposer.run({
+  PrismaClient, 
+  config: {
+    autoImport: {
+      paths: './src/routes/myFirstModel' // OR './src/routes' if you want
+      getFile: (fileName) => fileName != 'mySecretFile.js'
+    }
+  }
+});
+```
+

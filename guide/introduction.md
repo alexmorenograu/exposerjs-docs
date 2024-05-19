@@ -9,7 +9,7 @@ A quick look:
 ```js
 import { exposer } from "exposerjs";
 import { PrismaClient } from "@prisma/client";
-exposer.run(PrismaClient);
+exposer.run({PrismaClient});
 ```
 
 ## Why ExposerJS?

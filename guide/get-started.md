@@ -49,7 +49,7 @@ Create file index.js add the code to start the project:
 ```js [Basic]
 import { exposer } from "exposerjs";
 import { PrismaClient } from "@prisma/client";
-exposer.run(PrismaClient);
+exposer.run({PrismaClient});
 ```
 
 ```js [With express instance]
@@ -61,7 +61,7 @@ import express from "express";
 const app = express();
 const port = process.env.PORT || 3000;
 
-exposer.run(PrismaClient, app); // app → express
+exposer.run({PrismaClient, app}); // app → express
 
 app.listen(port, () => {
   console.log(`Backend is ready ${port}`);

@@ -19,6 +19,7 @@ export default defineConfig({
         items: [
           { text: 'Introduction', link: '/guide/introduction' },
           { text: 'Get started', link: '/guide/get-started' },
+          { text: 'Migrate to v0.2', link: '/guide/migrate-to-0-2' },
         ]
       },
       {

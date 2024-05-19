@@ -2,7 +2,7 @@
 
 ✅:Implemented 🛠️:Work in progess ❌:Not Implemented yet
 
-::: info Now v0.1.0
+::: info Now v0.2.0
 
 - 🛠️: Route models
 
@@ -36,5 +36,7 @@
   - ✅: Prisma (Default)
   - ❌: TypeORM
   - ❌: Sequelize
+
+- ✅: Auto Import methods
 
 :::

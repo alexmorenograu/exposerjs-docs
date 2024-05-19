@@ -87,7 +87,7 @@ import { exposer } from "exposerjs";
 import { PrismaClient } from "@prisma/client";
 import myCustomMethod from "./myCustomMethod.js";
 
-exposer.run(PrismaClient);
+exposer.run({PrismaClient});
 ```
 
 ### 🎉Your first custom method is added!
