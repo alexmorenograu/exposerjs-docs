@@ -1,64 +1,60 @@
 # Default config
 
-## Example config.json with default config
+## Add changes in exposerjs/config.yml
 
-```json
- {
-  prefix: "/api",
-  verbs: {
-    get: {
-      findUnique: "/:id",
-      findMany: "",
-      findFirst: "/first",
-      count: "/count",
-      aggregate: "/aggregate",
-      groupBy: "/groupBy",
-    },
-    post: {
-      create: "",
-    },
-    put: {
-      upsert: "",
-    },
-    patch: {
-      update: "/:id",
-      updateMany: "/update",
-    },
-    delete: {
-      delete: "/:id",
-      deleteMany: "",
-    },
-  },
-  tokenVerify: true,
-  tokenKey: "EXPOSER_TOKEN_KEY",
-  aclVerify: true,
-  aclType: "fast",
-  userModel: {
-    roleId: "roleId",
-    defaultRoleId: 1,
-  },
-  roleModel: {
-    tableName: "role",
-    id: "id",
-    name: "name",
-  },
-  aclModel: {
-    tableName: "acls",
-    model: "model",
-    name: "name",
-    allow: "allow",
-  },
-  autoImport: false
-};
+This is the default configuration, if there are changes it can be added in exposerjs/config.yml
+
+```yml
+prefix: "/api"
+port: 3001
+verbs:
+  get:
+    findUnique: "/:id"
+    findMany: ""
+    findFirst: "/first"
+    count: "/count"
+    aggregate: "/aggregate"
+    groupBy: "/groupBy"
+  post:
+    create: ""
+  put:
+    upsert: ""
+  patch:
+    update: "/:id"
+    updateMany: "/update"
+  delete:
+    delete: "/:id"
+    deleteMany: ""
+tokenVerify: true
+tokenKey: "EXPOSER_TOKEN_KEY"
+aclVerify: true
+aclType: "fast"
+autoImport: false
+userModel:
+  roleId: "roleId"
+  defaultRoleId: 1
+roleModel:
+  tableName: "role"
+  id: "id"
+  name: "name"
+aclModel:
+  tableName: "acls"
+  model: "model"
+  name: "name"
+  allow: "allow"
 ```
 
-# Use in exposer.run
-
-```js
-/* More code */
-const myConfig = { prefix: "/api" };
-exposer.run({PrismaClient, config: myConfig});
-```
+::: details Deprecated apart from version 0.2.6
+  ::: warning 
+  ```js{5}
+  /* More code */
+  const myConfig = { prefix: "/api" };
+  exposer.run({
+    PrismaClient, 
+    config: myConfig
+  });
+  ```
+  ::: 
 
 # Properties explained
 

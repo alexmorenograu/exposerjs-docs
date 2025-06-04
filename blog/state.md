@@ -2,7 +2,7 @@
 
 ✅:Implemented 🛠️:Work in progess ❌:Not Implemented yet
 
-::: info Now v0.2.0
+::: info Now v0.2.X
 
 - 🛠️: Route models
 
